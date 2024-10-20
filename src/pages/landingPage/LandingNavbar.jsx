@@ -1,4 +1,4 @@
-const Navbar = () => {
+const LandingNavbar = () => {
   return (
     <div>
       <nav className="bg-white w-[100vw] h-[9vh] ">
@@ -9,7 +9,7 @@ const Navbar = () => {
           <div id="nav-logo">
             <a href="./index.html" className="text-black font-bold">
               <h3 className="text-[2.5rem]">
-                Shop.<span className="text-[#e41e1b] ">Window</span>
+                Window.<span className="text-[#e41e1b] ">Shopper</span>
               </h3>
             </a>
           </div>
@@ -17,11 +17,21 @@ const Navbar = () => {
             id="right-side"
             className="flex gap-x-[1rem] items-center justify-center]"
           >
-            <a href="./business.html">Sign In</a>
+            <a
+              href=""
+              className="hover:text-[#e41e1b] hover:border-b-[1.5px] hover:border-[#e41e1b]"
+            >
+              Sign In
+            </a>
             <span>|</span>
-            <a href="">Register</a>
-            <button className="h-[5.5vh] px-[1.5rem] bg-[#e41e1b] rounded-[0.625rem] text-white hover:bg-[#e41e1b] hover:border-[2px]">
-              Sell
+            <a
+              href=""
+              className="hover:text-[#e41e1b] hover:border-b-[1.5px] hover:border-[#e41e1b]"
+            >
+              Register
+            </a>
+            <button className="h-[5.5vh] px-[1.9rem] bg-[#e41e1b] rounded-[0.625rem] text-white hover:bg-black ">
+              Advertise
             </button>
           </div>
         </div>
@@ -30,4 +40,4 @@ const Navbar = () => {
   );
 }
 
-export default Navbar;
+export default  LandingNavbar;
