@@ -2,8 +2,11 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./App.css";
 import LandingPage from "./pages/landingPage";
 import DashboardLayout from "./layouts/DashboardLayout";
-import Overview from './pages/dashboard/Overview.jsx'
-import Settings from './pages/dashboard/Settings.jsx'
+import Overview from './pages/dashboard/Overview.jsx';
+import Settings from './pages/dashboard/Settings.jsx';
+import PostAdvert from "./components/postAdvert.jsx";
+import EditAdvert from "./components/editAdvert.jsx";
+import Signup from "./components/Signup.jsx";
 
 function App() {
   const router = createBrowserRouter([
@@ -23,10 +26,8 @@ function App() {
           path:"settings",
           element:<Settings/>
         },
-        // {
-        //   path:"post_ad",
-        //   element: <
-        // }
+        
+
       ]
     }
   ]);

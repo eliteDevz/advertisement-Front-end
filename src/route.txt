@@ -1,0 +1,12 @@
+{
+          path:"post_ad",
+          element: <PostAdvert/>
+        },
+        { path:"edit_ad",
+          element: <EditAdvert/>
+
+        },
+        { path:"sign_up",
+          element: <Signup/>
+
+        },
