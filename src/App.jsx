@@ -5,6 +5,7 @@ import Overview from "./pages/dashboard/Overview.jsx";
 import Settings from "./pages/dashboard/Settings.jsx";
 import LandingLayout from "./layouts/LandingLayout.jsx";
 import LandingCategories from "./pages/landingPage/LandingCategories.jsx";
+import Cars from "./pages/landingPage/Cars.jsx";
 
 function App() {
   const router = createBrowserRouter([
@@ -16,6 +17,10 @@ function App() {
           index: true,
           element: <LandingCategories />,
         },
+        {
+          path:"categories-cars",
+          element: <Cars/>
+        }
       ],
     },
     {
