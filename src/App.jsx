@@ -1,34 +1,77 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./App.css";
-import LandingPage from "./pages/landingPage";
 import DashboardLayout from "./layouts/DashboardLayout";
-import Overview from './pages/dashboard/Overview.jsx'
-import Settings from './pages/dashboard/Settings.jsx'
+import Overview from "./pages/dashboard/Overview.jsx";
+import Settings from "./pages/dashboard/Settings.jsx";
+import LandingLayout from "./layouts/LandingLayout.jsx";
+import LandingCategories from "./pages/landingPage/LandingCategories.jsx";
+import Cars from "./pages/landingPage/Cars.jsx";
+import Fashion from "./pages/landingPage/Fashion.jsx";
+import Furniture from "./pages/landingPage/Furniture.jsx";
+import Events from "./pages/landingPage/Events.jsx";
+import SpareParts from "./pages/landingPage/SpareParts.jsx";
+import Property from "./pages/landingPage/Property.jsx";
+import SignUp from "./pages/signUp/index.jsx";
+import PostAdvert from "./components/PostAdvert.jsx";
 
 function App() {
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <LandingPage />
+      element: <LandingLayout />,
+      children: [
+        {
+          index: true,
+          element: <LandingCategories />,
+        },
+        {
+          path: "categories-cars",
+          element: <Cars />,
+        },
+        {
+          path: "categories-fashion",
+          element: <Fashion />,
+        },
+        {
+          path: "categories-furniture",
+          element: <Furniture />,
+        },
+        {
+          path: "categories-events",
+          element: <Events />,
+        },
+        {
+          path: "categories-spare-parts",
+          element: <SpareParts />,
+        },
+        {
+          path: "categories-properties",
+          element: <Property />,
+        },
+      ],
     },
     {
-      path:"/dashboard",
-      element: <DashboardLayout/>,
-      children:[
+      path: "/login-registration",
+      element: <SignUp />,
+    },
+    {
+      path: "/dashboard",
+      element: <DashboardLayout />,
+      children: [
         {
-          index:true,
-          element: <Overview/>
+          index: true,
+          element: <Overview />,
         },
         {
-          path:"settings",
-          element:<Settings/>
+          path: "settings",
+          element: <Settings />,
         },
-        // {
-        //   path:"post_ad",
-        //   element: <
-        // }
-      ]
-    }
+        {
+          path: "new-ad",
+          element: <PostAdvert />,
+        },
+      ],
+    },
   ]);
 
   return <RouterProvider router={router} />;
