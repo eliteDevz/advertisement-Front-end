@@ -5,7 +5,7 @@ import Slider from "../pages/landingPage/Slider";
 
 const LandingLayout = () => {
   return (
-    <div className="w-[100vw] flex flex-col gap-y-[4rem]">
+    <div className="w-[100vw] flex flex-col gap-y-[4rem] bg-[#ffffff]">
       <LandingNavbar />
       <Slider />
       <Outlet />
