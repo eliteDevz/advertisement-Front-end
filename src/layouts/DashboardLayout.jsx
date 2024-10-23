@@ -5,7 +5,7 @@ import Navbar from "../components/Navbar.jsx";
 const DashboardLayout = () => {
   return (
     <div>
-      <div className="bg-[#EAEAEA] w-[100vw] h-[100vh] shadow-lg flex relative">
+      <div className="bg-[#EAEAEA] w-[100vw] h-[100vh]  shadow-lg flex relative">
         <div id="sidebar" className="w-[18%] h-[100%]">
           <Sidebar />
         </div>

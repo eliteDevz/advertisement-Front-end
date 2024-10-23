@@ -13,6 +13,8 @@ import SpareParts from "./pages/landingPage/SpareParts.jsx";
 import Property from "./pages/landingPage/Property.jsx";
 import SignUp from "./pages/signUp/index.jsx";
 import PostAdvert from "./components/PostAdvert.jsx";
+import MoreDetails from "./components/MoreDetails.jsx";
+import EditAdvert from "./components/EditAdvert.jsx";
 
 function App() {
   const router = createBrowserRouter([
@@ -48,6 +50,10 @@ function App() {
           path: "categories-properties",
           element: <Property />,
         },
+        {
+          path:"ad-details/:id",
+          element: <MoreDetails/>
+        }
       ],
     },
     {
@@ -69,6 +75,10 @@ function App() {
         {
           path: "new-ad",
           element: <PostAdvert />,
+        },
+        {
+          path: "edit-ad",
+          element: <EditAdvert />,
         },
       ],
     },
