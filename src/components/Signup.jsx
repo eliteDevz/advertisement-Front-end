@@ -50,12 +50,12 @@ const Signup = () => {
   };
 
   return (
-    <div className="bg-[rgb(204,204,204)] sm:flex-cols-2 md:flex justify-center md:items-center w-[100vw] h-[100vh] ">
+    <div className="bg-[rgb(204,204,204)] flex justify-center items-center w-[100vw] h-[100vh] ">
       <div
         id="main"
-        className="md:w-[80vw] sm:w-[50vw]  md:h-[60vh] md:p-[4%] md:absolute bg-[#3B3B3B]"
+        className="w-[80vw] h-[60vh] p-[4%] absolute bg-[#3B3B3B]"
       >
-        <div id="description" className="md:w-[60%]">
+        <div id="description" className="w-[60%]">
           <h1 className="text-white text-[2.5rem] text-left">
             Already have an account?
           </h1>
