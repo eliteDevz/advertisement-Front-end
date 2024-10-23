@@ -6,13 +6,17 @@ import Settings from "./pages/dashboard/Settings.jsx";
 import LandingLayout from "./layouts/LandingLayout.jsx";
 import LandingCategories from "./pages/landingPage/LandingCategories.jsx";
 import Cars from "./pages/landingPage/Cars.jsx";
+// import Signup from "./components/Signup.jsx";
+// import Login from "./components/Login.jsx";
+// import LogoutPopup from "./components/Logout.jsx";
+// import AdvertisePopup from "./components/AdvertiseButton.jsx";
+import PostAdvert from "./components/postAdvert.jsx";
 import Fashion from "./pages/landingPage/Fashion.jsx";
 import Furniture from "./pages/landingPage/Furniture.jsx";
 import Events from "./pages/landingPage/Events.jsx";
 import SpareParts from "./pages/landingPage/SpareParts.jsx";
 import Property from "./pages/landingPage/Property.jsx";
 import SignUp from "./pages/signUp/index.jsx";
-import PostAdvert from "./components/PostAdvert.jsx";
 import MoreDetails from "./components/MoreDetails.jsx";
 import EditAdvert from "./components/EditAdvert.jsx";
 
@@ -21,6 +25,7 @@ function App() {
     {
       path: "/",
       element: <LandingLayout />,
+      
       children: [
         {
           index: true,

@@ -16,7 +16,7 @@ const LandingCategories = () => {
         <h4 className="text-[2rem] font-medium">Explore Popular Categories</h4>
         <div
           id="category-grids"
-          className="w-[100%] mx-auto flex justify-between"
+          className="w-[100%] mx-auto  justify-between"
         >
           {/* Category 1 */}
           <Link to="/categories-cars">
@@ -124,8 +124,12 @@ const LandingCategories = () => {
                 </h4>
               </div>
             </div>
+
+        
           </Link>
         </div>
+
+
       </div>
     </section>
   );
