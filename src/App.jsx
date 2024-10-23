@@ -11,6 +11,11 @@ import Login from "./components/Login.jsx";
 import LogoutPopup from "./components/Logout.jsx";
 import AdvertisePopup from "./components/AdvertiseButton.jsx";
 import PostAdvert from "./components/postAdvert.jsx";
+import Fashion from "./pages/landingPage/Fashion.jsx";
+import Furniture from "./pages/landingPage/Furniture.jsx";
+import Events from "./pages/landingPage/Events.jsx";
+import SpareParts from "./pages/landingPage/SpareParts.jsx";
+import Property from "./pages/landingPage/Property.jsx";
 
 function App() {
   const router = createBrowserRouter([
@@ -27,8 +32,31 @@ function App() {
           path: "categories-cars",
           element: <Cars />,
         },
-        
+        {
+          path: "categories-fashion",
+          element: <Fashion />,
+        },
+        {
+          path: "categories-furniture",
+          element: <Furniture />,
+        },
+        {
+          path: "categories-events",
+          element: <Events />,
+        },
+        {
+          path: "categories-spare-parts",
+          element: <SpareParts />,
+        },
+        {
+          path: "categories-properties",
+          element: <Property />,
+        },
       ],
+    },
+    {
+      path: "/login-registration",
+      element: <SignUp />,
     },
     {
       path: "/dashboard",
@@ -43,21 +71,8 @@ function App() {
           element: <Settings />,
         },
         {
-          path: "sign_up",
-          element: <Signup />,
-        },
-        {
-          path: "login",
-          element: <Login />,
-        },
-        {
-          path: "logout",
-          element: <LogoutPopup />,
-        },
-
-        {
-          path: "advert",
-          element: <AdvertisePopup />,
+          path: "new-ad",
+          element: <PostAdvert />,
         },
       ],
     },
