@@ -4,30 +4,36 @@ import { useState } from "react";
 import { apiSignup } from "../services/auth";
 
 const Signup = () => {
-
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
   const saveSignup = async (event) => {
     event.preventDefault(); //prevents the page from reloading
     try {
-      setLoading(true)
+      setLoading(true);
       //prepare data to be sent to the backend
       const formData = new FormData(event.target); //takes data from the form
-      const name = formData.get("name")
-      const  email = formData.get("email")
-      const password = formData.get("password")
-      
+      const firstName = formData.get("firstName");
+      const lastName = formData.get("lastName");
+      const email = formData.get("email");
+      const location = formData.get("location");
+      const password = formData.get("password");
+
       //check if password match if you are using 2 password feilds
       //if (password1 !== password2){
       //return
-     //   }
-    //
+      //   }
+      //
       //payload contains key : value pairs below
       //if key and value are same, pick one eg. name, if not then state both seperated with a colon(;) eg. name:name
-      const payload = { name, email, password};
+      const payload = { firstName, lastName, email, location, password };
       const response = await apiSignup(payload);
-      console.log(response.data)
+      // console.log(response.data);
+
+
+
+      
+    
 
       Swal.fire({
         icon: "success",
@@ -45,16 +51,13 @@ const Signup = () => {
         text: "Please check your details and try again.",
       });
     } finally {
-      setLoading(false) //if you dont do this the loading will continue even if there is an error
+      setLoading(false); //if you dont do this the loading will continue even if there is an error
     }
   };
 
   return (
     <div className="bg-[rgb(204,204,204)] flex justify-center items-center w-[100vw] h-[100vh] ">
-      <div
-        id="main"
-        className="w-[80vw] h-[60vh] p-[4%] absolute bg-[#3B3B3B]"
-      >
+      <div id="main" className="w-[80vw] h-[60vh] p-[4%] absolute bg-[#3B3B3B]">
         <div id="description" className="w-[60%]">
           <h1 className="text-white text-[2.5rem] text-left">
             Already have an account?
@@ -79,25 +82,42 @@ const Signup = () => {
           onSubmit={saveSignup}
           className="md:w-full sm:w-[60vw] flex flex-col items-center"
         >
-          <h1 className="text-red-600 font-bold text-3xl mb-2">SIGNUP</h1>
+          <h1 className="text-red-600 font-bold text-3xl mb-2">SIGN UP</h1>
+
           <div className="mb-2 w-[70%]">
             <label
               className="block text-gray-700 font-bold mb-1"
-              htmlFor="first-name"
+              htmlFor="firstName"
             >
-              Name
+              First Name
             </label>
             <input
               type="text"
-              id="name"
-              name="name"
+              id="firstName"
+              name="firstName"
               placeholder="Enter your first name here"
               className="w-full p-1 border rounded "
               required
             />
           </div>
 
-         
+          <div className="mb-2 w-[70%]">
+            <label
+              className="block text-gray-700 font-bold mb-1"
+              htmlFor="lastName"
+            >
+              Last Name
+            </label>
+            <input
+              type="text"
+              id="lastName"
+              name="lastName"
+              placeholder="Enter your last name here"
+              className="w-full p-1 border rounded "
+              required
+            />
+          </div>
+
           <div className="mb-2 w-[70%]">
             <label
               className="block text-gray-700 font-bold mb-1"
@@ -110,6 +130,22 @@ const Signup = () => {
               id="email"
               name="email"
               placeholder="Enter your email here"
+              className="w-full p-1 border rounded"
+              required
+            />
+          </div>
+          <div className="mb-2 w-[70%]">
+            <label
+              className="block text-gray-700 font-bold mb-1"
+              htmlFor="location"
+            >
+              Location
+            </label>
+            <input
+              type="location"
+              id="location"
+              name="location"
+              placeholder="Enter your location here"
               className="w-full p-1 border rounded"
               required
             />
@@ -136,8 +172,10 @@ const Signup = () => {
             type="submit"
             className="border-2 border-white bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600"
           >
-            
+          
+             
             {loading ? "Loading..." : "Submit"}
+ 
           </button>
         </form>
       </div>

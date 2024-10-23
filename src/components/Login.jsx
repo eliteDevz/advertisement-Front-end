@@ -1,19 +1,25 @@
 import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { apiLogin } from "../services/auth";
+import { useState } from "react";
 
 const Login = () => {
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
   const saveLogin = async (event) => {
     try {
+      setLoading(true);
       event.preventDefault();
       const formData = new FormData(event.target);
-
-      const response = await apiLogin({
-        email: formData.get("email"),
-        password: formData.get("password"),
-      });
+      const email = formData.get("email");
+      const password = formData.get("password");
+      const response = await apiLogin({ email, password }); //payload goes here
+      console.log(response.data);
+      
+      if (response.status === 200) {
+        localStorage.setItem("token", response.data.accessToken);
+      }
 
       Swal.fire({
         icon: "success",
@@ -30,6 +36,8 @@ const Login = () => {
         title: "Login Failed",
         text: "Please check your email or password and try again.",
       });
+    } finally {
+      setLoading(false); //if you dont do this the loading will continue even if there is an error
     }
   };
 
@@ -41,7 +49,7 @@ const Login = () => {
       >
         <div id="description" className="md:w-[60%]">
           <h1 className="text-white text-[2.5rem] text-left">
-            Don't have an account?
+            Don&apos;t have an account?
           </h1>
         </div>
 
@@ -97,8 +105,10 @@ const Login = () => {
           <button
             type="submit"
             className="mt-6 border-2 border-white bg-red-500 text-white px-4 py-2 rounded-lg w-[30%] hover:bg-red-600"
+            //notice that you put the wriring on the button eg "Login" inside the conditional rendering below
           >
-            LOGIN
+          
+            {loading ? "Loading..." : "Login"}
           </button>
         </form>
       </div>
