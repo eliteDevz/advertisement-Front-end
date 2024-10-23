@@ -8,19 +8,20 @@ const Navbar = () => {
       <div id="nav-container" className="w-[95%] h-[100%] mx-auto flex">
         <div
           id="search-side"
-          className="  w-[78%] h-[100%] flex items-center justify-between"
+          className="  w-[78%] h-[100%] flex items-center justify-center"
         >
           <input
-            type="search"
-            placeholder="Search by title, author or genre"
-            className="h-[5.5vh] w-[55%] rounded-[0.625rem] bg-[#F0F5FF] px-8 "
+            id="emailInput"
+            type="email"
+            className="h-[3rem] w-[500px] rounded-l-[40px] px-[25px] bg-[#FFFFFF] border-[2px]"
+            placeholder="Search by category, ads or keywords"
           />
-          
-          <Link to="/add-new">
-            <button className="h-[5.5vh] px-[1.5rem] bg-[#0055FF] rounded-[0.625rem] text-white hover:bg-[#007bff] hover:border-[2px]">
-              Add New Book
-            </button>
-          </Link>
+          <button
+            type="submit"
+            className=" h-[3rem] bg-[#e41e1b] px-[25px] rounded-r-[40px] text-white"
+          >
+            Search
+          </button>
         </div>
         <div
           id="user"

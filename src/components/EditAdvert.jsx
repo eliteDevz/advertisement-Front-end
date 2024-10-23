@@ -36,7 +36,7 @@ const EditAdvert = () => {
     };
 
     return (
-      <div className="h-[100%] w-[100%] flex flex-col justify-center items-center gap-y-[2rem] py-[20px] ">
+      <div className="h-[100%] mx-auto w-[70%] flex flex-col justify-center items-center gap-y-[2rem] py-[20px] bg-white">
         <h4 className="text-[2.2rem] font-medium text-[#e41e1b]">
           Edit Advert
         </h4>

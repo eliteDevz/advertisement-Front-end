@@ -1,6 +1,29 @@
 import { Link, NavLink } from "react-router-dom";
+import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 
 const LandingNavbar = () => {
+  
+    const navigate = useNavigate();
+
+    const handleAdvertise = () => {
+      Swal.fire({
+        title: "You need an account to be able to post ads.",
+        icon: "info",
+        showCancelButton: true,
+        confirmButtonText: "Create Account",
+        cancelButtonText: "Cancel",
+        confirmButtonColor: "#28a745",
+        cancelButtonColor: "#e41e1b",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          // Redirect to the advertisement page
+          navigate("/signup"); // change '/post_ad' to the correct route
+        }
+      });
+    };
+  
+
   return (
     <div>
       <nav className="bg-white w-[100vw] h-[9vh] ">
@@ -22,19 +45,19 @@ const LandingNavbar = () => {
             className="flex gap-x-[1rem] items-center justify-center]"
           >
             <NavLink
-              to="/login-registration"
-              // style={({ isActive }) => ({ color: isActive && "#e41e1b" })}
+              to="/login"
+              style={({ isActive }) => ({ color: isActive && "#e41e1b" })}
             >
               <a
                 href=""
                 className="hover:text-[#e41e1b] hover:border-b-[1.5px] hover:border-[#e41e1b]"
               >
-                Sign In
+                Log In
               </a>
             </NavLink>
             <span>|</span>
             <NavLink
-              to="/login-registration"
+              to="/signup"
               style={({ isActive }) => ({
                 color: isActive && "#e41e1b",
               })}
@@ -46,7 +69,8 @@ const LandingNavbar = () => {
                 Register
               </a>
             </NavLink>
-            <button className="h-[5.5vh] px-[1.9rem] bg-[#e41e1b] rounded-[0.625rem] text-white hover:bg-black ">
+            <button className="h-[5.5vh] px-[1.9rem] bg-[#e41e1b] rounded-[0.625rem] text-white hover:bg-black "
+             onClick={handleAdvertise}>
               Advertise
             </button>
           </div>

@@ -61,7 +61,7 @@ const Signup = () => {
           </h1>
         </div>
 
-        <Link to="">
+        <Link to="/login">
           <button
             type="button"
             className="border-2 border-white w-[15%] bg-[#3B3B3B] text-white px-4 py-2 rounded-lg mt-[5%] hover:bg-red-600"

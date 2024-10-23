@@ -6,10 +6,8 @@ import Settings from "./pages/dashboard/Settings.jsx";
 import LandingLayout from "./layouts/LandingLayout.jsx";
 import LandingCategories from "./pages/landingPage/LandingCategories.jsx";
 import Cars from "./pages/landingPage/Cars.jsx";
-// import Signup from "./components/Signup.jsx";
-// import Login from "./components/Login.jsx";
+import Login from "./pages/login/index.jsx";
 // import LogoutPopup from "./components/Logout.jsx";
-// import AdvertisePopup from "./components/AdvertiseButton.jsx";
 import PostAdvert from "./components/postAdvert.jsx";
 import Fashion from "./pages/landingPage/Fashion.jsx";
 import Furniture from "./pages/landingPage/Furniture.jsx";
@@ -19,13 +17,15 @@ import Property from "./pages/landingPage/Property.jsx";
 import SignUp from "./pages/signUp/index.jsx";
 import MoreDetails from "./components/MoreDetails.jsx";
 import EditAdvert from "./components/EditAdvert.jsx";
+import LogIn from "./pages/login/index.jsx";
+import MyAds from "./pages/dashboard/MyAds.jsx";
 
 function App() {
   const router = createBrowserRouter([
     {
       path: "/",
       element: <LandingLayout />,
-      
+
       children: [
         {
           index: true,
@@ -56,26 +56,34 @@ function App() {
           element: <Property />,
         },
         {
-          path:"ad-details/:id",
-          element: <MoreDetails/>
-        }
+          path: "ad-details/:id",
+          element: <MoreDetails />,
+        },
       ],
     },
     {
-      path: "/login-registration",
+      path: "/signup",
       element: <SignUp />,
+    },
+    {
+      path: "/login",
+      element: <LogIn />,
     },
     {
       path: "/dashboard",
       element: <DashboardLayout />,
       children: [
         {
-          index: true,
+            index: true,
+            element: <MyAds />
+        },
+        {
+          path: "overview",
           element: <Overview />,
         },
         {
-          path: "settings",
-          element: <Settings />,
+          path: "ad-details/:id",
+          element: <MoreDetails />,
         },
         {
           path: "new-ad",
