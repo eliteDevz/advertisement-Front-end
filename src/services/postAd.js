@@ -1,3 +1,3 @@
-import { apiClient } from "./config";
+import { apiClient, baseUrl } from "./config";
 
-export const apiPostAd = async => apiClient.post("dasboard/post_ad",payload)
+export const apiPostAd = async (payload)=> apiClient.post(`${baseUrl}/adverts`, payload)

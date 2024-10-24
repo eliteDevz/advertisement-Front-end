@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
-const AdCard = ({ key, title, price, icon }) => {
+const AdCard = ({ key, title, price, icon, id }) => {
   return (
     <div
       key={key}
@@ -8,14 +9,20 @@ const AdCard = ({ key, title, price, icon }) => {
     >
       <div className="image w-[44%] h-[100%] rounded-l-[6px] shadow-sm flex justify-center items-center overflow-hidden">
         <img
-          src={`https://savefiles.org/${icon}?shareable_link=448`} 
+          src={`https://savefiles.org/${icon}?shareable_link=463`}
           alt="Image of ad"
           className="w-[100%] h-[100%] object-cover rounded-[inherit]  "
         />
       </div>
       <div className="text w-[56%] h-[100%] p-[20px] flex flex-col justify-center gap-y-[0.5rem]">
-        <h5 className="font-medium">{title}</h5>
-        <h4 className=" font-semibold text-[1.3rem] text-[#e41e1b]">{price}</h4>
+        <Link to={`/ad-details/${id}`}>
+          <h5 className="font-medium">{title}</h5>
+        </Link>
+        <Link to={`/ad-details/${id}`}>
+          <h4 className=" font-semibold text-[1.3rem] text-[#e41e1b]">
+            {price}
+          </h4>
+        </Link>
       </div>
     </div>
   );
@@ -29,6 +36,11 @@ AdCard.propTypes = {
   icon: PropTypes.string.isRequired, // coverImage is a required string (URL)
   price: PropTypes.string.isRequired,
   key: PropTypes.oneOfType([
+    // targetID can be string or number
+    PropTypes.string,
+    PropTypes.number,
+  ]).isRequired, // Required targetID for deleting the book
+  id: PropTypes.oneOfType([
     // targetID can be string or number
     PropTypes.string,
     PropTypes.number,

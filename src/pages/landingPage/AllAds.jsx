@@ -45,11 +45,12 @@ const AllAds = () => {
             className="grid grid-cols-3 grid-rows-2 gap-x-[1rem] gap-y-[1.5rem]"
           >
             {/* card */}
-            {ads.map((item, index) => {
+            {ads.map((item) => {
               console.log(item);
               return (
                 <AdCard
-                  key={index}
+                  key={item.id}
+                  id={item.id}
                   title={item.title}
                   price={item.price}
                   icon={item.icon}

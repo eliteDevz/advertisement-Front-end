@@ -1,9 +1,33 @@
 import plus from "../../assets/dashboard/plus.png";
-import VendorAdCard from "../../components/VendorAdCard";
+import VendorAdCard from "./VendorAdCard";
 import { fashion } from "../../services/groups";
 import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import { baseUrl } from "../../services/config";
 
 const MyAds = () => {
+  const [ads, setAds] = useState([]);
+  const [loading, setLoading] = useState(false);
+
+  const getAd = async () => {
+    try {
+      setLoading(true);
+      const response = await axios.get(`${baseUrl}/adverts`);
+      console.log(response);
+      console.log(loading);
+      setAds(response.data);
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    getAd();
+  }, []);
+
   return (
     <section id="overview" className="h-[100%] w-[100%]">
       <div
@@ -23,13 +47,15 @@ const MyAds = () => {
             </div>
           </Link>
         </div>
-        {fashion.FASH.map((car, index) => {
+        {ads.map((item) => {
           return (
             <VendorAdCard
-              key={index}
-              title={car.title}
-              price={car.price}
-              image={car.image}
+              key={item.id}
+              id={item.id}
+              title={item.title}
+              price={item.price}
+              icon={item.icon}
+              getAd={getAd}
             />
           );
         })}

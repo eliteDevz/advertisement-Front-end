@@ -11,7 +11,7 @@ const PostAdvert = () => {
         try {
             const formData = new FormData(e.target);
             const response = await apiPostAd(formData)
-    
+            console.log(response);
             Swal.fire({
                 icon: 'success',
                 title: 'Post Added Successfully',
@@ -19,7 +19,7 @@ const PostAdvert = () => {
                 timer: 1500
             });
         
-                navigate('/ads');
+                navigate('/dashboard');
 
         } catch (error) {
             console.error(error);

@@ -1,13 +1,14 @@
 import { apiClient } from "./config";
 
-export const apiGetProducts = async () => apiClient.get("/products");
+export const apiGetProducts = async () => await apiClient.get("/adverts");
 
-export const apiGetSingleProduct = async (id) => apiClient.get(`/products/${id}`);
+export const apiGetSingleProduct = async (id) =>
+  apiClient.get(`/adverts/${id}`);
 
-export const apiAddProduct = async (payload) => apiClient.post("/products", payload);
+export const apiAddProduct = async (payload) =>
+  apiClient.post("/adverts", payload);
 
-export const apiEditProduct = async (payload) => {
-    return apiClient.post("dashboard/edit_ad",payload)
-}
+export const apiEditProduct = async (id, payload) =>
+  apiClient.patch(`/adverts/${id}`, payload);
 
 // delete using id format

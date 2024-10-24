@@ -90,7 +90,7 @@ function App() {
           element: <PostAdvert />,
         },
         {
-          path: "edit-ad",
+          path: "edit-ad/:id",
           element: <EditAdvert />,
         },
       ],

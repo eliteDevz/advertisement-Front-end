@@ -42,7 +42,7 @@ const Signup = () => {
         timer: 1000,
       });
 
-      navigate("/login"); //change this to dashboard when Joel gives you the route
+      navigate("/dashboard"); //change this to dashboard when Joel gives you the route
     } catch (error) {
       console.log(error);
       Swal.fire({

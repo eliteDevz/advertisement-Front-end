@@ -1,6 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
-import { apiLogin } from "../services/auth";
+import { apiLogin, apiProfile } from "../services/auth";
 import { useState } from "react";
 
 const Login = () => {
@@ -19,6 +19,11 @@ const Login = () => {
       
       if (response.status === 200) {
         localStorage.setItem("token", response.data.accessToken);
+        //get user profile
+        // const profileResponse = await apiProfile();
+        // console.log(profileResponse.data);
+
+
       }
 
       Swal.fire({
