@@ -54,7 +54,7 @@ const MyAds = () => {
               id={item.id}
               title={item.title}
               price={item.price}
-              icon={item.icon}
+              image={item.image}
               getAd={getAd}
             />
           );

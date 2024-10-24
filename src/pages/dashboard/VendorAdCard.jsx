@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import { useState } from "react";
 import ellipsis from "../../assets/adCard/ellipsis.png";
-import { Link, useParams } from "react-router-dom";
+import { Link,} from "react-router-dom";
 import axios from "axios";
 import { baseUrl } from "../../services/config";
 import { alert } from "@material-tailwind/react";
@@ -95,7 +95,7 @@ export default VendorAdCard;
 // Define prop types for props
 VendorAdCard.propTypes = {
   title: PropTypes.string.isRequired, //
-  icon: PropTypes.string.isRequired, // coverImage is a required string (URL)
+  image: PropTypes.string.isRequired, // coverImage is a required string (URL)
   price: PropTypes.string.isRequired,
   key: PropTypes.oneOfType([
     // targetID can be string or number

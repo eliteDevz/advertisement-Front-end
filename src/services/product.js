@@ -12,3 +12,8 @@ export const apiEditProduct = async (id, payload) =>
   apiClient.patch(`/adverts/${id}`, payload);
 
 // delete using id format
+
+export const apiSearchProduct = async (searchTerm) =>
+  apiClient.get(
+    `/adverts?filter={"title":{"$regex":"${searchTerm}","$options":"i"}}`
+  );

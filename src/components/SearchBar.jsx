@@ -1,7 +1,5 @@
 // // import { useState } from "react";
 
-
-
 // // const SearchBar = ({onSearch}) => {
 // //      //onSearch was passed as a prop
 // //   // State to store the input value
@@ -18,7 +16,6 @@
 // //     onSearch({ query: searchQuery });
 // //   };
 
-
 // //   return (
 // //     <div className="flex mx-auto">
 // //       <input
@@ -28,8 +25,7 @@
 // //         placeholder="Search by category, ads or keywords"
 // //         value={searchQuery}
 // //           onChange={handleInputChange}
-        
-        
+
 // //       />
 // //       <button
 // //         type="submit"
@@ -43,15 +39,6 @@
 // // }
 
 // // export default SearchBar;
-
-
-
-
-
-
-
-
-
 
 // import { useState } from "react";
 // import PropTypes from "prop-types"; // Import PropTypes
@@ -99,16 +86,10 @@
 
 // export default SearchBar;
 
-
-
-
-
-
-
 import { useState } from "react";
 import PropTypes from "prop-types"; // Import PropTypes
 
-const SearchBar = ({ onSearch }) => {
+const SearchBar = ({onSearch}) => {
   // State to store the input value
   const [searchQuery, setSearchQuery] = useState("");
 
@@ -118,9 +99,10 @@ const SearchBar = ({ onSearch }) => {
   };
 
   // Handle search button click
-  const handleSearchClick = () => {
+  const handleSearchClick = async () => {
     // Call the onSearch function with the single input search query
-    onSearch({ query: searchQuery });
+    onSearch(searchQuery);
+   
   };
 
   return (
