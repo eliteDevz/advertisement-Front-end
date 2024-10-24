@@ -34,7 +34,7 @@ const PostAdvert = () => {
     return (
       <div className="h-[100%] mx-auto w-[70%] flex flex-col justify-center items-center gap-y-[2rem] py-[20px] bg-white">
         <h4 className="text-[2.2rem] font-medium text-[#e41e1b]">New Advert</h4>
-        <form onSubmit={postAd}>
+        <form onSubmit={postAd} >
           <div>
             <label
               className="block text-gray-700 font-bold mb-1"
@@ -46,6 +46,7 @@ const PostAdvert = () => {
               type="text"
               id="title"
               name="title"
+              placeholder="Place title of ad here"
               className="w-[100%] p-1 mb-6 border rounded"
               required
             />
@@ -61,6 +62,7 @@ const PostAdvert = () => {
               // type="text"
               id="description"
               name="description"
+              placeholder="Ad description here..."
               className="w-[100%] p-1 mb-6 border rounded"
               rows="4"
               required
@@ -94,6 +96,7 @@ const PostAdvert = () => {
               name="price"
               min="0"
               step="0.50"
+              placeholder="Price of item in USD"
               className="w-[100%] p-1 mb-6 border rounded"
               required
             />
@@ -109,11 +112,12 @@ const PostAdvert = () => {
               type="text"
               id="category"
               name="category"
+              placeholder="Enter category: Fashion, Property, events..."
               className="w-[100%] p-1 border rounded"
               required
             />
           </div>
-          <button className="mt-6 border-2 border-white bg-red-500 text-white px-4 py-2 rounded-lg w-[35%] hover:bg-red-600">
+          <button className="mt-6 border-2 border-white bg-red-500 text-white px-4 py-2 rounded-lg w-[35%] hover:bg-red-600 ">
             Post
           </button>
         </form>

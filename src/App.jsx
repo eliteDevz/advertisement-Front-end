@@ -11,7 +11,6 @@ import Login from "./pages/login/index.jsx";
 import PostAdvert from "./components/postAdvert.jsx";
 import Fashion from "./pages/landingPage/Fashion.jsx";
 import Furniture from "./pages/landingPage/Furniture.jsx";
-import Events from "./pages/landingPage/Events.jsx";
 import SpareParts from "./pages/landingPage/SpareParts.jsx";
 import Property from "./pages/landingPage/Property.jsx";
 import SignUp from "./pages/signUp/index.jsx";
@@ -19,6 +18,7 @@ import MoreDetails from "./components/MoreDetails.jsx";
 import EditAdvert from "./components/EditAdvert.jsx";
 import LogIn from "./pages/login/index.jsx";
 import MyAds from "./pages/dashboard/MyAds.jsx";
+import AllAds from "./pages/landingPage/AllAds.jsx";
 
 function App() {
   const router = createBrowserRouter([
@@ -44,8 +44,8 @@ function App() {
           element: <Furniture />,
         },
         {
-          path: "categories-events",
-          element: <Events />,
+          path: "categories-all-ads",
+          element: <AllAds />,
         },
         {
           path: "categories-spare-parts",

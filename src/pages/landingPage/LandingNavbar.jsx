@@ -26,7 +26,7 @@ const LandingNavbar = () => {
 
   return (
     <div>
-      <nav className="bg-white w-[100vw] h-[9vh] ">
+      <nav id="topbar" className="bg-white w-[100vw] h-[9vh] ">
         <div
           id="nav-container"
           className="w-[80%] h-[100%] mx-auto flex items-center justify-between"

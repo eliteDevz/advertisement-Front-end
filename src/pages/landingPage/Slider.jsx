@@ -1,5 +1,7 @@
 import { Button, Carousel, Typography } from "@material-tailwind/react";
 import slideBg1 from "../../assets/slider/slideBg1.jpg";
+import cars from "../../assets/slider/cars.png";
+import house from "../../assets/slider/house.png";
 
 export const Slider = () => {
   return (
@@ -45,7 +47,7 @@ export const Slider = () => {
       {/* Slide 2 */}
       <div id="slide2" className="relative w-[100%] h-[100%]">
         <img
-          src={slideBg1}
+          src={cars}
           alt="background for slide one"
           className="w-[100%] h-[100%] object-cover rounded-[20px]"
         />
@@ -55,21 +57,21 @@ export const Slider = () => {
             color="white"
             className="text-[2.5rem] font-bold leading-[2.9rem]"
           >
-            Get the grip you need
+            From sleek sedans to powerful SUVs
             <br />
-            for every mile
+            find your perfect ride today!
           </Typography>
           <Typography variant="lead " color="white" className="font-medium">
-            From highways to off-road, our tires keep you
+            Discover a wide range of cars to suit
             <br />
-            rolling no matter where life takes you
+            every lifestyle and budget.
           </Typography>
 
           <Button
             size="lg"
             className="w-[200px] px-[15px] py-[10px] font-medium border-[1.5px] hover:text-[black] hover:bg-[white]"
           >
-            View Parts
+            Explore Parts
           </Button>
         </div>
       </div>
@@ -78,7 +80,7 @@ export const Slider = () => {
 
       <div id="slide3" className="relative w-[100%] h-[100%]">
         <img
-          src={slideBg1}
+          src={house}
           alt="background for slide one"
           className="w-[100%] h-[100%] object-cover rounded-[20px]"
         />
@@ -88,26 +90,25 @@ export const Slider = () => {
             color="white"
             className="text-[2.5rem] font-bold leading-[2.9rem]"
           >
-            Get the grip you need
+            Your dream home awaits!
             <br />
-            for every mile
           </Typography>
           <Typography variant="lead " color="white" className="font-medium">
-            From highways to off-road, our tires keep you
+            Explore our exclusive listings of beautiful homes and properties{" "}
             <br />
-            rolling no matter where life takes you
+            at unbeatable prices. Start your journey to homeownership now!
           </Typography>
 
           <Button
             size="lg"
             className="w-[200px] px-[15px] py-[10px] font-medium border-[1.5px] hover:text-[black] hover:bg-[white]"
           >
-            View Parts
+            View Homes
           </Button>
         </div>
       </div>
     </Carousel>
   );
-}
+};
 
 export default Slider;

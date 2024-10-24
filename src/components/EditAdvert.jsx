@@ -52,6 +52,7 @@ const EditAdvert = () => {
               type="text"
               id="title"
               name="title"
+              placeholder="Place title of ad here"
               className="w-[100%] p-1 border mb-6 rounded"
               required
             />
@@ -67,6 +68,7 @@ const EditAdvert = () => {
               // type="text"
               id="description"
               name="description"
+              placeholder="Ad description here..."
               className="w-[100%] p-1 border mb-6 rounded"
               rows="4"
               required
@@ -100,6 +102,7 @@ const EditAdvert = () => {
               name="price"
               min="0"
               step="0.50"
+              placeholder="Price of item in USD"
               className="w-[100%] p-1 border mb-6 rounded"
               required
             />
@@ -115,6 +118,7 @@ const EditAdvert = () => {
               type="text"
               id="category"
               name="category"
+              placeholder="Enter category: Fashion, Property, events..."
               className="w-[100%] p-1 border mb-6 rounded"
               required
             />

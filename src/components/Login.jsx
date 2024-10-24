@@ -28,7 +28,7 @@ const Login = () => {
         timer: 1500,
       });
 
-      navigate("/ads");
+      navigate("/dashboard");
     } catch (error) {
       console.log(error);
       Swal.fire({
@@ -42,18 +42,21 @@ const Login = () => {
   };
 
   return (
-    <div className="bg-[rgb(204,204,204)] sm:flex-cols-2 md:flex justify-center md:items-center w-[100vw] h-[100vh]">
+    <div className="bg-[#EAEAEA] sm:flex-cols-2 md:flex justify-center md:items-center w-[100vw] h-[100vh]">
       <div
         id="main"
-        className="md:w-[80vw] sm:w-[50vw]  md:h-[60vh] md:p-[4%] md:absolute bg-[#3B3B3B]"
+        className="md:w-[80vw] sm:w-[50vw]  md:h-[60vh] md:p-[4%] md:absolute bg-[#3B3B3B] flex flex-col justify-center"
       >
         <div id="description" className="md:w-[60%]">
           <h1 className="text-white text-[2.5rem] text-left">
             Don&apos;t have an account?
           </h1>
+          <h4 className="text-white text-[1.2rem] text-left">
+            Click on the button below to create one
+          </h4>
         </div>
 
-        <Link to = "/signup">
+        <Link to="/signup">
           <button
             type="button"
             className="border-2 border-white w-[15%] bg-[#3B3B3B] text-white px-4 py-2 rounded-lg mt-[5%] hover:bg-red-600"
@@ -71,7 +74,7 @@ const Login = () => {
           onSubmit={saveLogin}
           className="w-[80%] flex flex-col items-center"
         >
-          <h1 className="text-red-600 font-bold text-3xl mb-2">LOGIN</h1>
+          <h1 className="text-[#E41E1B] font-bold text-3xl mb-2">LOGIN</h1>
           <div className="mb-2 w-[100%]">
             <label
               className="block text-gray-700 font-bold mb-4"
@@ -104,10 +107,9 @@ const Login = () => {
           </div>
           <button
             type="submit"
-            className="mt-6 border-2 border-white bg-red-500 text-white px-4 py-2 rounded-lg w-[30%] hover:bg-red-600"
+            className="mt-6 border-2 border-white bg-[#E41E1B] text-white px-4 py-2 rounded-lg w-[30%] hover:bg-[#E41E1B]"
             //notice that you put the wriring on the button eg "Login" inside the conditional rendering below
           >
-          
             {loading ? "Loading..." : "Login"}
           </button>
         </form>

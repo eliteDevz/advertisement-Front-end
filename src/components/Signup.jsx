@@ -56,18 +56,24 @@ const Signup = () => {
   };
 
   return (
-    <div className="bg-[rgb(204,204,204)] flex justify-center items-center w-[100vw] h-[100vh] ">
-      <div id="main" className="w-[80vw] h-[60vh] p-[4%] absolute bg-[#3B3B3B]">
+    <div className="bg-[#EAEAEA] flex justify-center items-center w-[100vw] h-[100vh] ">
+      <div
+        id="main"
+        className="w-[80vw] h-[60vh] p-[4%] absolute bg-[#3B3B3B] flex flex-col justify-center"
+      >
         <div id="description" className="w-[60%]">
-          <h1 className="text-white text-[2.5rem] text-left">
+          <h3 className="text-white text-[2.5rem] text-left">
             Already have an account?
-          </h1>
+          </h3>
+          <h4 className="text-white text-[1.2rem] text-left">
+            Click on the button below to login
+          </h4>
         </div>
 
         <Link to="/login">
           <button
             type="button"
-            className="border-2 border-white w-[15%] bg-[#3B3B3B] text-white px-4 py-2 rounded-lg mt-[5%] hover:bg-red-600"
+            className="border-2 border-white w-[15%] bg-[#3B3B3B] text-white px-4 py-2 rounded-lg mt-[5%] hover:bg-[#E41E1B]"
           >
             LOGIN
           </button>
@@ -82,7 +88,7 @@ const Signup = () => {
           onSubmit={saveSignup}
           className="md:w-full sm:w-[60vw] flex flex-col items-center"
         >
-          <h1 className="text-red-600 font-bold text-3xl mb-2">SIGN UP</h1>
+          <h1 className="text-[#E41E1B] font-bold text-3xl mb-2">SIGN UP</h1>
 
           <div className="mb-2 w-[70%]">
             <label
@@ -170,12 +176,9 @@ const Signup = () => {
 
           <button
             type="submit"
-            className="border-2 border-white bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600"
+            className="border-2 border-white bg-[#E41E1B] text-white px-4 py-2 rounded-lg hover:bg-[#E41E1B]"
           >
-          
-             
             {loading ? "Loading..." : "Submit"}
- 
           </button>
         </form>
       </div>

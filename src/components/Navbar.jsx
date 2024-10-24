@@ -1,8 +1,14 @@
-import { Link } from "react-router-dom";
-import avatar from '../assets/navbar/avatar.png'
-import bell from '../assets/navbar/notification-bell.png'
+import avatar from "../assets/navbar/avatar.png";
+import bell from "../assets/navbar/notification-bell.png";
+import SearchBar from "./SearchBar";
 
 const Navbar = () => {
+  // Define the search handler function
+  const handleSearch = (searchData) => {
+    console.log("Search Query:", searchData.query);
+    // You can add logic here to filter ads or fetch search results
+  };
+
   return (
     <nav className="w-[82vw] h-[12vh] bg-white z-10 box-shadow fixed top-0 right-0">
       <div id="nav-container" className="w-[95%] h-[100%] mx-auto flex">
@@ -10,18 +16,8 @@ const Navbar = () => {
           id="search-side"
           className="  w-[78%] h-[100%] flex items-center justify-center"
         >
-          <input
-            id="emailInput"
-            type="email"
-            className="h-[3rem] w-[500px] rounded-l-[40px] px-[25px] bg-[#FFFFFF] border-[2px]"
-            placeholder="Search by category, ads or keywords"
-          />
-          <button
-            type="submit"
-            className=" h-[3rem] bg-[#e41e1b] px-[25px] rounded-r-[40px] text-white"
-          >
-            Search
-          </button>
+          {/* Pass the search function to SearchBar */}
+          <SearchBar onSearch={handleSearch} />
         </div>
         <div
           id="user"
@@ -46,6 +42,6 @@ const Navbar = () => {
       </div>
     </nav>
   );
-}
+};
 
 export default Navbar;

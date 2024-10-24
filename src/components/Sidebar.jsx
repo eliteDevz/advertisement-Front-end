@@ -2,6 +2,9 @@ import { Link, NavLink } from 'react-router-dom';
 import logout from '../assets/sidebar/logout.png'
 import chat from '../assets/sidebar/chat.png'
 import settings from '../assets/sidebar/settings.png'
+import overview from '../assets/sidebar/overview.png'
+import megaphone from '../assets/sidebar/megaphone.png'
+import LogoutPopup from './Logout';
 
 const Sidebar = () => {
   return (
@@ -28,7 +31,7 @@ const Sidebar = () => {
               className="bg-[#F2F2F5] w-[38px] h-[38px] rounded-[0.625rem] flex justify-center items-center"
             >
               <img
-                src=""
+                src={megaphone}
                 alt="heart shaped icon"
                 className="h-[28px] w-[28px]"
               />
@@ -36,6 +39,7 @@ const Sidebar = () => {
             <NavLink
               to="/dashboard"
               style={({ isActive }) => ({ color: isActive && "#e41e1b" })}
+              
             >
               <h5 className="text-[1.17rem] text-[#727C8E] hover:text-[#e41e1b]">
                 My Ads
@@ -53,7 +57,7 @@ const Sidebar = () => {
                 className="bg-[#F2F2F5] w-[38px] h-[38px] rounded-[0.625rem] flex justify-center items-center"
               >
                 <img
-                  src=""
+                  src={overview}
                   alt="heart shaped icon"
                   className="h-[28px] w-[28px]"
                 />
@@ -63,21 +67,6 @@ const Sidebar = () => {
               </h5>
             </div>
           </NavLink>
-          <Link to="">
-            <div id="menu-item" className="flex items-center gap-x-[0.7rem]">
-              <div
-                id="img-bg"
-                className="bg-[#F2F2F5] w-[38px] h-[38px] rounded-[0.625rem] flex justify-center items-center"
-              >
-                <img
-                  src=""
-                  alt="heart shaped icon"
-                  className="h-[28px] w-[28px]"
-                />
-              </div>
-              <h5 className="text-[1.17rem]  text-[#727C8E]">Authors</h5>
-            </div>
-          </Link>
         </div>
 
         <hr className="w-[100%] mx-auto border-t-2px " />
@@ -129,7 +118,7 @@ const Sidebar = () => {
                 className="h-[28px] w-[28px]"
               />
             </div>
-            <h5 className="text-[1.17rem]  text-[#727C8E]">Logout</h5>
+            <LogoutPopup />
           </div>
         </div>
       </div>

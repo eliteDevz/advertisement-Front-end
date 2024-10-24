@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 
-const AdCard = ({ key, title, price, image }) => {
+const AdCard = ({ key, title, price, icon }) => {
   return (
     <div
       key={key}
@@ -8,7 +8,7 @@ const AdCard = ({ key, title, price, image }) => {
     >
       <div className="image w-[44%] h-[100%] rounded-l-[6px] shadow-sm flex justify-center items-center overflow-hidden">
         <img
-          src={image}
+          src={`https://savefiles.org/${icon}?shareable_link=448`} 
           alt="Image of ad"
           className="w-[100%] h-[100%] object-cover rounded-[inherit]  "
         />
@@ -26,7 +26,7 @@ export default AdCard;
 // Define prop types for props
 AdCard.propTypes = {
   title: PropTypes.string.isRequired, //
-  image: PropTypes.string.isRequired, // coverImage is a required string (URL)
+  icon: PropTypes.string.isRequired, // coverImage is a required string (URL)
   price: PropTypes.string.isRequired,
   key: PropTypes.oneOfType([
     // targetID can be string or number
