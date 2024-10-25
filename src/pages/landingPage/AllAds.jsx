@@ -13,7 +13,7 @@ const AllAds = () => {
   const getAd = async () => {
     try {
       setLoading(true);
-      const response = await axios.get(`${baseUrl}/adverts`);
+      const response = await axios.get(`${baseUrl}/adverts?limit=0`);
       console.log(response);
       console.log(loading);
       setAds(response.data);
