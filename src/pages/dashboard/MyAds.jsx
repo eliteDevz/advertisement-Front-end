@@ -15,7 +15,6 @@ const MyAds = () => {
       setLoading(true);
       const response = await axios.get(`${baseUrl}/adverts?limit=0`);
       console.log(response);
-      
       setAds(response.data);
     } catch (error) {
       console.log(error);
