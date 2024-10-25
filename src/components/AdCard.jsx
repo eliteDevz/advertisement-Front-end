@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
-const AdCard = ({ key, title, price, icon, id }) => {
+const AdCard = ({ key, title, price, image, id }) => {
   return (
     <div
       key={key}
@@ -9,7 +9,7 @@ const AdCard = ({ key, title, price, icon, id }) => {
     >
       <div className="image w-[44%] h-[100%] rounded-l-[6px] shadow-sm flex justify-center items-center overflow-hidden">
         <img
-          src={`https://savefiles.org/${icon}?shareable_link=463`}
+          src={`https://savefiles.org/${image}?shareable_link=463`}
           alt="Image of ad"
           className="w-[100%] h-[100%] object-cover rounded-[inherit]  "
         />
@@ -33,7 +33,7 @@ export default AdCard;
 // Define prop types for props
 AdCard.propTypes = {
   title: PropTypes.string.isRequired, //
-  icon: PropTypes.string.isRequired, // coverImage is a required string (URL)
+  image: PropTypes.string.isRequired, // coverImage is a required string (URL)
   price: PropTypes.string.isRequired,
   key: PropTypes.oneOfType([
     // targetID can be string or number

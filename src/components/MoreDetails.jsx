@@ -76,19 +76,22 @@ const MoreDetails = () => {
     //     </div>
     //   </section>
     // </div>
-    <div className="h-[500px] w-[70%] bg-white mx-auto flex justify-between rounded-[10px] shadow-lg">
+    <div className="h-[500px] w-[80%] px-[20px] bg-white mx-auto flex items-center justify-between rounded-[10px] shadow-lg">
       <div className="w-[39%]  flex justify-center items-center">
-        <div className="h-[70%] w-[90%] bg-[yellow] rounded-[10px]">
+        <div className="h-[70%] w-[90%]  rounded-[10px]">
           <img
-            src={`https://savefiles.org/${ad.icon}?shareable_link=448`}
-            alt=""
+            src={`https://savefiles.org/${ad.image}?shareable_link=448`}
+            alt="Image of ad"
+            className="w-[100%] h-[100%] object-cover rounded-[inherit]"
           />
         </div>
       </div>
       <div className="w-[59%] flex flex-col justify-center gap-y-[1rem]">
         <span className="text-[2.5rem] font-semibold">{ad.title}</span>
         <span className="text-[1.2rem]">{ad.description}</span>
-        <span className="text-[#E41E1B] text-[2rem] font-semibold">${ad.price}</span>
+        <span className="text-[#E41E1B] text-[2rem] font-semibold">
+          ${ad.price}
+        </span>
       </div>
     </div>
   );

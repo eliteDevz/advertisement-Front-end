@@ -5,6 +5,7 @@ import property from "../../assets/categories/property.png";
 import furniture from "../../assets/categories/furniture.png";
 import allAds from "../../assets/categories/all-ads.png";
 import { Link, useOutletContext } from "react-router-dom";
+import AdCard from "../../components/AdCard";
 
 const LandingCategories = () => {
   const data = useOutletContext();
@@ -12,7 +13,24 @@ const LandingCategories = () => {
   return (
     <section>
       {data ? (
-        <div>Data goes here</div>
+        <div className="w-[80%] mx-auto flex">
+          <div className="flex flex-wrap gap-x-[1.3rem] justify-center ">
+            {data.map((item) => {
+              return (
+                <div key={item.id} className="w-[400px] height-[200px]">
+                  <AdCard
+                    key={item.id}
+                    id={item.id}
+                    title={item.title}
+                    price={item.price}
+                    image={item.image}
+                    // getAd={getAd}
+                  />
+                </div>
+              );
+            })}
+          </div>
+        </div>
       ) : (
         <div
           id="alignment-container"

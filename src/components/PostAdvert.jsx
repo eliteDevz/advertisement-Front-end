@@ -77,8 +77,8 @@ const PostAdvert = () => {
             </label>
             <input
               type="file"
-              id="icon"
-              name="icon"
+              id="image"
+              name="image"
               className="w-[100%] p-1 mb-6 border rounded"
               required
             />
