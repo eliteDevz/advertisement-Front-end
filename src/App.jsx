@@ -20,7 +20,7 @@ import MyAds from "./pages/dashboard/MyAds.jsx";
 import AllAds from "./pages/landingPage/AllAds.jsx";
 import DashboardLayout2 from "./layouts/DashboardLayout2.jsx";
 import MyAds2 from "./pages/dashboard/MyAds2.jsx";
-import PostAdvert from "./components/postAdvert.jsx";
+import PostAdvert from "./components/PostAdvert.jsx";
 
 function App() {
   const router = createBrowserRouter([
