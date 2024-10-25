@@ -8,7 +8,6 @@ import LandingCategories from "./pages/landingPage/LandingCategories.jsx";
 import Cars from "./pages/landingPage/Cars.jsx";
 import Login from "./pages/login/index.jsx";
 // import LogoutPopup from "./components/Logout.jsx";
-import PostAdvert from "./components/postAdvert.jsx";
 import Fashion from "./pages/landingPage/Fashion.jsx";
 import Furniture from "./pages/landingPage/Furniture.jsx";
 import SpareParts from "./pages/landingPage/SpareParts.jsx";
