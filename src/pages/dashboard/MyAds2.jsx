@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { baseUrl } from "../../services/config";
 
-const MyAds = () => {
+const MyAds2 = () => {
   const [ads, setAds] = useState([]);
   const [loading, setLoading] = useState(false);
 
@@ -15,7 +15,7 @@ const MyAds = () => {
       setLoading(true);
       const response = await axios.get(`${baseUrl}/adverts`);
       console.log(response);
-      
+      console.log(loading);
       setAds(response.data);
     } catch (error) {
       console.log(error);
@@ -47,21 +47,9 @@ const MyAds = () => {
             </div>
           </Link>
         </div>
-        {ads.map((item) => {
-          return (
-            <VendorAdCard
-              key={item.id}
-              id={item.id}
-              title={item.title}
-              price={item.price}
-              image={item.image}
-              getAd={getAd}
-            />
-          );
-        })}
       </div>
     </section>
   );
 };
 
-export default MyAds;
+export default MyAds2;

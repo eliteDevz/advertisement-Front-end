@@ -1,4 +1,5 @@
 import avatar from "../assets/navbar/avatar.png";
+import defaultavatar from "../assets/navbar/default-avatar.png";
 import bell from "../assets/navbar/notification-bell.png";
 import SearchBar from "./SearchBar";
 
@@ -31,12 +32,12 @@ const Navbar = () => {
           <div className="flex gap-x-[0.7rem] items-center mr-[1rem]">
             <div className="h-[38px] w-[38px] rounded-[40px]">
               <img
-                src={avatar}
+                src={defaultavatar}
                 alt="profile picture"
                 className="rounded-[40px]"
               />
             </div>
-            <h6 className="text-[1rem] font-semibold">Sheik Mutawakill</h6>
+            <h6 className="text-[1rem] font-semibold">User&apos;s name</h6>
           </div>
         </div>
       </div>

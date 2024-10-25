@@ -14,7 +14,7 @@ const LandingCategories = () => {
     <section>
       {data ? (
         <div className="w-[80%] mx-auto flex">
-          <div className="flex flex-wrap gap-x-[1.3rem] justify-center ">
+          <div className="flex flex-wrap gap-x-[1.3rem] gap-y-[1.3rem] justify-center ">
             {data.map((item) => {
               return (
                 <div key={item.id} className="w-[400px] height-[200px]">

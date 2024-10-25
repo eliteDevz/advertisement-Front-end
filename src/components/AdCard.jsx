@@ -20,7 +20,7 @@ const AdCard = ({ key, title, price, image, id }) => {
         </Link>
         <Link to={`/ad-details/${id}`}>
           <h4 className=" font-semibold text-[1.3rem] text-[#e41e1b]">
-            {price}
+            ${price}
           </h4>
         </Link>
       </div>

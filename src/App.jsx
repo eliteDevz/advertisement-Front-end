@@ -19,6 +19,8 @@ import EditAdvert from "./components/EditAdvert.jsx";
 import LogIn from "./pages/login/index.jsx";
 import MyAds from "./pages/dashboard/MyAds.jsx";
 import AllAds from "./pages/landingPage/AllAds.jsx";
+import DashboardLayout2 from "./layouts/DashboardLayout2.jsx";
+import MyAds2 from "./pages/dashboard/MyAds2.jsx";
 
 function App() {
   const router = createBrowserRouter([
@@ -95,6 +97,16 @@ function App() {
         },
       ],
     },
+    {
+      path: "/dash-board",
+      element: <DashboardLayout2/>,
+      children: [
+        {
+         index: true,
+          element: <MyAds2 />
+        }
+      ]
+    }
   ]);
 
   return <RouterProvider router={router} />;
